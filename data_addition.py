@@ -1,0 +1,9 @@
+import os
+import urllib.request
+import shutil
+import zipfile
+
+
+url = 'https://storage.googleapis.com/kaggle-data-sets/8782/2431805/bundle/archive.zip?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=gcp-kaggle-com%40kaggle-161607.iam.gserviceaccount.com%2F20230509%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20230509T210349Z&X-Goog-Expires=259200&X-Goog-SignedHeaders=host&X-Goog-Signature=9e1bf1fe9ff30310256b4b08f1ce03b20cfbc0af524f044deef6397d1a867e42a812bca4b48c3e9631af437803467f8cc3fc9239cd94faf152d087afc0387c74475d41f69130fe712354a52b5f7df8f73fb63ad210bdf9731e6297bd9bd4526aa2460dbec930c1025cdecb0e7a7b9b2c65d73c3d00c3a21097eca59b325228438d9bd46c2faa9daa540d579c66be7f2965a8f2c85d6a761e8c8e586f185f3583ce78c9b4b17fe1161c36cdcec40749900332bd3955980e816868cadeb481d1e28cbc6ca4f55097af867fb518b1426f145e3f6dd477bf7d3562cfaddef2e7ca3caadfd12d1686fece1c636c2c6408b4c2901eb593349a68e6d4ac281533db1eea'
+os.mkdir('./data')
+urllib.request.urlretrieve(url,'./data/data.zip')
