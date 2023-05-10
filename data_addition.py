@@ -3,7 +3,14 @@ import urllib.request
 import shutil
 import zipfile
 
+shutil.rmtree('./data')
 
-url = 'https://storage.googleapis.com/kaggle-data-sets/8782/2431805/bundle/archive.zip?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=gcp-kaggle-com%40kaggle-161607.iam.gserviceaccount.com%2F20230509%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20230509T210349Z&X-Goog-Expires=259200&X-Goog-SignedHeaders=host&X-Goog-Signature=9e1bf1fe9ff30310256b4b08f1ce03b20cfbc0af524f044deef6397d1a867e42a812bca4b48c3e9631af437803467f8cc3fc9239cd94faf152d087afc0387c74475d41f69130fe712354a52b5f7df8f73fb63ad210bdf9731e6297bd9bd4526aa2460dbec930c1025cdecb0e7a7b9b2c65d73c3d00c3a21097eca59b325228438d9bd46c2faa9daa540d579c66be7f2965a8f2c85d6a761e8c8e586f185f3583ce78c9b4b17fe1161c36cdcec40749900332bd3955980e816868cadeb481d1e28cbc6ca4f55097af867fb518b1426f145e3f6dd477bf7d3562cfaddef2e7ca3caadfd12d1686fece1c636c2c6408b4c2901eb593349a68e6d4ac281533db1eea'
+url = 'https://storage.googleapis.com/kaggle-data-sets/3052759/5246433/bundle/archive.zip?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=gcp-kaggle-com%40kaggle-161607.iam.gserviceaccount.com%2F20230510%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20230510T164513Z&X-Goog-Expires=259200&X-Goog-SignedHeaders=host&X-Goog-Signature=5729fddbbf6935aeff216032f2d7299bd6ee8546f923d25dc3350cbca22a02ad365f4e5eea81fbc77f71b77359121c6a08ae6bbbccf440484b1129c2adcd39beb3722ce99106557dcac624ff2a3f67f6a25ce205275f5bc78591ccc7de0d7cc0f46f65c9fc853a32c8e6a3aadfdffc95fec8a0d0d2413e466acde8a67da1a9dba77369faf286e51d331b1cc35f9b20b369d6926d0e3f03710ede38b735686b6903c70c1e54175de35e60c0bcf9155546179ce27146bcfd51d1fff7b861c8abdf3120026dd713f08a12844a64d528e456fa3ead1b37951f40aab68b3121ddc6bea969e5f41b5d3d263ff633848acf6392a3daf90fd0590a5308af16807fceb8af'
 os.mkdir('./data')
 urllib.request.urlretrieve(url,'./data/data.zip')
+
+data_extraction = zipfile.ZipFile('./data/data.zip')
+data_extraction.extractall('./data/')
+data_extraction.close()
+
+os.unlink('./data/data.zip ')
