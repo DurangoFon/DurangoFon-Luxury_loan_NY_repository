@@ -39,3 +39,5 @@ The first impression marked this dataset without missing data, but the land and 
  - Important data were separate, the reason is eliminate the maximun noise posible. 
  - The models build were linear regressions with multiple variables.
  - The final result are expose inside the notebook blocks were it is build
+
+## This projects counts with the directory of virtual enviroment if presents problems.
